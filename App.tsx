@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Skiil</Text>
+      <Text style={styles.title}>AAWRO</Text>
       <View style={styles.card}>
         <Text style={styles.label}>Backend</Text>
         <Text style={styles.url}>{API_URL}</Text>

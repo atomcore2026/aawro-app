@@ -1,4 +1,4 @@
-# skiil-app
+# aawro-app
 
 Mobile app built with React Native + Expo (runs in Expo Go).
 
@@ -34,4 +34,4 @@ npx expo install <pkg>  # add SDK-compatible packages
 Product and design specs for AAWRO (PRD, flows, booking lifecycle, data model,
 API, realtime, payments, admin, design system and more) live in
 [`docs/`](docs/README.md). The same `docs/` folder is kept in the
-`aawro-nestjs-backend`, `aawro-admin` and `skiil-app` repos.
+`aawro-nestjs-backend`, `aawro-admin` and `aawro-app` repos.
