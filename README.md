@@ -28,3 +28,10 @@ npm run ios          # open on iOS
 npx tsc --noEmit     # typecheck
 npx expo install <pkg>  # add SDK-compatible packages
 ```
+
+## Product documentation
+
+Product and design specs for AAWRO (PRD, flows, booking lifecycle, data model,
+API, realtime, payments, admin, design system and more) live in
+[`docs/`](docs/README.md). The same `docs/` folder is kept in the
+`aawro-nestjs-backend`, `aawro-admin` and `skiil-app` repos.
