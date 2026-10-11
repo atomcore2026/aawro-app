@@ -30,3 +30,7 @@
 | D25 | 2026-10 | Mobile development in **Expo Go**; Razorpay via hosted checkout until a dev build is needed | Fast iteration with no native builds | EAS dev build from day one |
 
 Add new decisions at the bottom with the next number. Do not edit past rows; supersede them with a new row.
+| D26 | 2026-10 | One Expo app (`aawro-app`) with the role chosen at the shared entry screen; the role is stored on the account and never switched in-app. Supersedes the "separate builds" part of D1 | One repo and one codebase to ship; the prototype already runs both flows from one entry | Two Expo apps |
+| D27 | 2026-10 | Providers pick up to **5 categories**, and up to **5 services per category**, each with their own name, description, unit (hour / day) and rate inside the category's admin min / max | Matches the design (category picker) and D8 | Fixed catalogue services only |
+| D28 | 2026-10 | v1 timers run in-process (`@nestjs/schedule` sweeps that re-check status) instead of BullMQ | One API instance at launch; no Redis needed. Swap for BullMQ when scaling out | BullMQ from day one |
+| D29 | 2026-10 | Without MSG91 / Razorpay keys the API runs a dev OTP (`123456`) and a built-in test payment gateway | The full flow can be demoed before contracts and keys are in place | Block until keys exist |

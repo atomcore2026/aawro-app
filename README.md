@@ -19,6 +19,36 @@ your dev machine's LAN IP detected from the Expo dev server,
 `http://<LAN-IP>:3000/api`, because `localhost` on a phone is the phone itself.
 To override it, create `.env` from `.env.example` and set `EXPO_PUBLIC_API_URL`.
 
+## Demo accounts
+
+Run `npm run seed` in `aawro-nestjs-backend` first. Without MSG91 keys the
+backend accepts the OTP **123456** for any number.
+
+| Role | Phone | Notes |
+| --- | --- | --- |
+| Customer | 98110 42207 | Has bookings in every state, chats and notifications |
+| Provider | 98730 11455 | Raj Plumbing Services: requests waiting, calendar, earnings |
+
+Any other number creates a new account. A new provider goes through onboarding.
+
+## How it's built
+
+One Expo app for both roles. The entry screen picks customer or provider, and
+the role is stored on the account (decision D26).
+
+- `src/app/`: Expo Router routes. `(customer)/` and `(provider)/` are the two
+  tab groups. Stack screens (provider profile, booking flow, booking detail,
+  chat, payment, review, help, availability, services…) sit at the top level.
+- `src/lib/`: API client with token refresh (`api.ts`), session (`auth.tsx`),
+  Socket.IO realtime (`socket.ts`), TanStack Query hooks (`queries.ts`),
+  formatting (₹ in paise, IST dates) and design tokens (`theme.ts`).
+- `src/components/`: the UI kit (`ui.tsx`) and shared cards and lists.
+
+Payments use the backend's built-in test gateway unless Razorpay keys are set
+on the server.
+
+To run in a browser: `npx expo start --web`. Set `EXPO_PUBLIC_API_URL=http://localhost:3000/api`.
+
 ## Scripts
 
 ```bash
